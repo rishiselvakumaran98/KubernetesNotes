@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: myapp-replicaset 
+  labels:
+    app: myapp
+    type: frontend
+spec:
+  template:
+      metadata:
+        # data about object; Convoluted as dictionary
+        name: myapp-pod
+        labels:
+          app: myapp
+          tier: frontend
+      spec: # dictionary
+        # define additional 
+        containers: # List/Array
+          - name: nginx-container
+            image: nginx
+  replicas: 3
+  # requires a selector section to identify what pods fall under it
+  # replicaSet can also manage pods that were not create as part of the Replica Set creation
+  # we can use replicaset to manage existing pods
+  selector: # not a required field
+    matchLabels:
+      type: frontend
+
+
+# To run file use kubectl create -f replicaset-definition.yml
+# kubectl get replicaset
+# kubectl get pods

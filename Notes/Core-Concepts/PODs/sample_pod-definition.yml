@@ -1,0 +1,20 @@
+# Root level properties
+apiVersion: v1 
+  # Pods/Service --> v1, ReplicaSet/Deployment --> apps/v1
+kind: Pod # Pod, Service, ReplicaSet, Deployment
+metadata:
+  # data about object; Convoluted as dictionary
+  name: myapp-pod
+  labels:
+    app: myapp
+    tier: frontend
+spec: # dictionary
+  # define additional 
+  containers: # List/Array
+    - name: nginx-container
+      image: nginx
+      resources:
+        
+        
+    
+    
