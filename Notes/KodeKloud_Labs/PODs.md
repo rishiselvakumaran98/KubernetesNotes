@@ -39,12 +39,12 @@ kubectl get pod webapp -o jsonpath='{.spec.containers[*].name}'
 
 ### 8. What is the state of the container agentx in the pod webapp?
 
-```
+```sh
 kubectl describe pod webapp
 ```
 
 ### 9. Delete the webapp Pod.
 
-```
+```sh
 kubectl delete pod webapp --now 
 ```
